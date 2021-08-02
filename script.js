@@ -1,21 +1,23 @@
-const container = document.getElementById('grid');
-const fragment = document.createDocumentFragment();
+const container = document.querySelector('.grid');
 
-let rows = [ "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P" ];
-let columns = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p" ];
+function drawGrid(size) {
 
-for(let i = 0; i < rows.length; i ++ ) {
-    
-    let row = document.createElement('div');
-    row.innerText = rows[i];
-    row.className = "row";
-    
-    
+    for(let i =1; i <= size; i ++) {
 
-    container.appendChild(row);
+        for(let j = 1; j <=size; j++) {
+
+        const cell = document.createElement('div');
+        cell.classList.add('gridCell');
+        container.style.gridTemplateColumns = `repeat(${size}, 3rem)`;
+        container.style.gridTemplateRows = `repeat(${size}, 3rem)`;
+        
+
+        
+
+        container.appendChild(cell);        
+
+        }
     
+    }
 }
-
-
-
-
+drawGrid(16);
