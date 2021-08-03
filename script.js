@@ -14,10 +14,27 @@ function drawGrid(size) {
 
         
 
-        container.appendChild(cell);        
+        container.appendChild(cell);      
 
+        
         }
-    
+        
+        
+
     }
+    
+    
 }
 drawGrid(16);
+
+const cells = document.querySelectorAll('.gridCell');
+	cells.forEach((cell => {
+		cell.addEventListener('mouseover', () => {		
+			cell.classList.add('hover');
+		})
+		
+	}));
+
+    
+
+
