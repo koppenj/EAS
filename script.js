@@ -9,6 +9,7 @@ function buildGrid(size) {
 
         const cell = document.createElement('div');
         cell.classList.add('gridCell');
+
         container.style.gridTemplateColumns = `repeat(${size}, 3rem)`;
         container.style.gridTemplateRows = `repeat(${size}, 3rem)`;
 
@@ -22,7 +23,7 @@ buildGrid(16);
 
 
 (function drawOnGrid() {
-    
+
     let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
 
     const cells = document.querySelectorAll('.gridCell');
@@ -35,7 +36,22 @@ buildGrid(16);
 
 })();
 
+(function clearBoard() {
 
+    const resetBoard = document.querySelector('#reset');
+    const cells = document.querySelectorAll('.gridCell');
+    
+    resetBoard.addEventListener('click', () => {
+        cells.forEach((cell => {
+		    	
+			    cell.style.backgroundColor = 'white';         
+		    
+		
+	    }));
+        
+        
+    })
+})();
     
 
 
