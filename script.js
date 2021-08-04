@@ -1,5 +1,6 @@
 const container = document.querySelector('.grid');
 
+
 function drawGrid(size) {
 
     for(let i =1; i <= size; i ++) {
@@ -27,13 +28,21 @@ function drawGrid(size) {
 }
 drawGrid(16);
 
+
+let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+
+
+
 const cells = document.querySelectorAll('.gridCell');
 	cells.forEach((cell => {
 		cell.addEventListener('mouseover', () => {		
-			cell.classList.add('hover');
+			cell.style.backgroundColor = randomColor;
 		})
 		
 	}));
+
+
+
 
     
 
