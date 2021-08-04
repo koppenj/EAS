@@ -1,7 +1,7 @@
 const container = document.querySelector('.grid');
 
 
-function drawGrid(size) {
+function buildGrid(size) {
 
     for(let i =1; i <= size; i ++) {
 
@@ -11,37 +11,29 @@ function drawGrid(size) {
         cell.classList.add('gridCell');
         container.style.gridTemplateColumns = `repeat(${size}, 3rem)`;
         container.style.gridTemplateRows = `repeat(${size}, 3rem)`;
-        
-
-        
 
         container.appendChild(cell);      
-
         
         }
-        
-        
-
-    }
-    
-    
+    }    
 }
-drawGrid(16);
+
+buildGrid(16);
 
 
-let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+(function drawOnGrid() {
+    
+    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
 
-
-
-const cells = document.querySelectorAll('.gridCell');
-	cells.forEach((cell => {
-		cell.addEventListener('mouseover', () => {		
-			cell.style.backgroundColor = randomColor;
-		})
+    const cells = document.querySelectorAll('.gridCell');
+	    cells.forEach((cell => {
+		    cell.addEventListener('mouseover', () => {		
+			    cell.style.backgroundColor = randomColor;         
+		    })
 		
-	}));
+	    }));
 
-
+})();
 
 
     
