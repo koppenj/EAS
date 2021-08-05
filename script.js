@@ -18,13 +18,14 @@ function buildGrid(size) {
         }
     }    
 }
-
 buildGrid(16);
+
 
 function getRandomColor() {
     let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
 }
+
 
 (function drawOnGrid() {
 
@@ -40,22 +41,46 @@ function getRandomColor() {
 
 })();
 
+
 (function clearBoard() {
 
-    const resetBoard = document.querySelector('#reset');
+    const resetButton = document.querySelector('#reset');
     const cells = document.querySelectorAll('.gridCell');
     
-    resetBoard.addEventListener('click', () => {
+    resetButton.addEventListener('click', () => {
         cells.forEach((cell => {
 		    	
-			    cell.style.backgroundColor = '';         
-		    
-		
+			    cell.style.backgroundColor = '';
+                         
+                drawNewGrid();
 	    }));
-        
-        
     })
 })();
+
+
+function drawNewGrid() {
+
+    let newSize = prompt('How big of a canvas do you want?', '16');
+
+    if (Number.isNaN(newSize) ) {
+        alert( " A real, positive number is required.");
+        drawNewGrid();
+    }
+
+    if (newSize > 100 ) {
+        alert( " Try and keep it at 100 maximum. ");
+        drawNewGrid();
+        
+    } 
     
+    else {
+        return newSize;
+        
+    }
+
+}
+
+
+
 
 
