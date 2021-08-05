@@ -21,15 +21,19 @@ function buildGrid(size) {
 
 buildGrid(16);
 
+function getRandomColor() {
+    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
 
 (function drawOnGrid() {
 
-    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    
 
     const cells = document.querySelectorAll('.gridCell');
 	    cells.forEach((cell => {
 		    cell.addEventListener('mouseover', () => {		
-			    cell.style.backgroundColor = randomColor;         
+			    cell.style.backgroundColor = getRandomColor();         
 		    })
 		
 	    }));
@@ -44,7 +48,7 @@ buildGrid(16);
     resetBoard.addEventListener('click', () => {
         cells.forEach((cell => {
 		    	
-			    cell.style.backgroundColor = 'white';         
+			    cell.style.backgroundColor = '';         
 		    
 		
 	    }));
