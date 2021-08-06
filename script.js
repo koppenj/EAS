@@ -18,6 +18,7 @@ function buildGrid(size) {
         
         }
     }    
+    drawOnGrid();
 }
 buildGrid(16);
 
@@ -31,10 +32,10 @@ function getRandomColor() {
 }
 
 
-(function drawOnGrid() {
+function drawOnGrid() {
 
     let cells = document.querySelectorAll('.gridCell');
-    
+
 	cells.forEach((cell => {
 		cell.addEventListener('mouseover', () => {		
 		    cell.style.backgroundColor = getRandomColor();         
@@ -42,22 +43,7 @@ function getRandomColor() {
 		
 	}));
 
-})();
-
-
-/*function clearBoard() {
-
-    
-    const cells = document.querySelectorAll('.gridCell');
-    
-    resetButton.addEventListener('click', () => {
-        cells.forEach((cell => {
-		    	
-			    cell.style.backgroundColor = '';
-
-	    }));
-    })
-};*/
+}
 
 
 function drawNewGrid() {
@@ -83,16 +69,14 @@ function drawNewGrid() {
 }
 
 
+resetButton.onclick = () => {
 
-    resetButton.onclick = () => {
-
-        while(container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
-    
-    
-        drawNewGrid();
+    while(container.firstChild) {
+        container.removeChild(container.firstChild);
     }
+    
+    drawNewGrid();
+}
 
     
 
