@@ -1,11 +1,13 @@
 .grid {
-    display: grid;  
+    display: grid;
     justify-content: center;
-    align-content: stretch;
+
     
 }
 
 .gridCell {
+
     border: solid black 0.5px;
+
     
 }
