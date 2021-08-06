@@ -1,6 +1,7 @@
 const container = document.querySelector('.grid');
 const resetButton = document.getElementById('reset');
 
+
 function buildGrid(size) {
 
     for(let i =1; i <= size; i ++) {
@@ -21,6 +22,9 @@ function buildGrid(size) {
 buildGrid(16);
 
 
+
+
+
 function getRandomColor() {
     let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
     return randomColor;
@@ -29,20 +33,19 @@ function getRandomColor() {
 
 (function drawOnGrid() {
 
+    let cells = document.querySelectorAll('.gridCell');
     
-
-    const cells = document.querySelectorAll('.gridCell');
-	    cells.forEach((cell => {
-		    cell.addEventListener('mouseover', () => {		
-			    cell.style.backgroundColor = getRandomColor();         
-		    })
+	cells.forEach((cell => {
+		cell.addEventListener('mouseover', () => {		
+		    cell.style.backgroundColor = getRandomColor();         
+		})
 		
-	    }));
+	}));
 
 })();
 
 
-(function clearBoard() {
+/*function clearBoard() {
 
     
     const cells = document.querySelectorAll('.gridCell');
@@ -54,7 +57,7 @@ function getRandomColor() {
 
 	    }));
     })
-})();
+};*/
 
 
 function drawNewGrid() {
@@ -79,9 +82,20 @@ function drawNewGrid() {
 
 }
 
-resetButton.onclick = () => {
-    drawNewGrid();
-}
+
+
+    resetButton.onclick = () => {
+
+        while(container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    
+    
+        drawNewGrid();
+    }
+
+    
+
 
 //black blobs under grid?
 
