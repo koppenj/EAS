@@ -1,5 +1,5 @@
 const container = document.querySelector('.grid');
-
+const resetButton = document.getElementById('reset');
 
 function buildGrid(size) {
 
@@ -44,22 +44,21 @@ function getRandomColor() {
 
 (function clearBoard() {
 
-    const resetButton = document.querySelector('#reset');
+    
     const cells = document.querySelectorAll('.gridCell');
     
     resetButton.addEventListener('click', () => {
         cells.forEach((cell => {
 		    	
 			    cell.style.backgroundColor = '';
-                         
-                drawNewGrid();
+
 	    }));
     })
 })();
 
 
 function drawNewGrid() {
-
+    
     let newSize = prompt('How big of a canvas do you want?', '16');
 
     if (Number.isNaN(newSize) ) {
@@ -74,11 +73,17 @@ function drawNewGrid() {
     } 
     
     else {
-        return newSize;
+        return buildGrid(newSize);
         
     }
 
 }
+
+resetButton.onclick = () => {
+    drawNewGrid();
+}
+
+//black blobs under grid?
 
 
 
