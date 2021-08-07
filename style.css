@@ -1,12 +1,18 @@
+body{
+    margin: 0% 20% 0%;
+}
+
 #grid {
     display:grid;
-    justify-content: center;
     width: 50vw;
+    border: solid black;
+    
     
 }
 
 .gridCell {
-    border: solid black 0.5px;
+    border: #ededed 0.5px;
+    border-style: none solid solid none;
     aspect-ratio: 1;
     
     
