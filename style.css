@@ -1,13 +1,14 @@
-.grid {
-    display: grid;
+#grid {
+    display:grid;
     justify-content: center;
-
+    width: 50vw;
     
 }
 
 .gridCell {
-
     border: solid black 0.5px;
-
+    aspect-ratio: 1;
+    
+    
     
 }

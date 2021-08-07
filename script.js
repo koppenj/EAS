@@ -1,4 +1,4 @@
-const container = document.querySelector('.grid');
+const container = document.getElementById('grid');
 const resetButton = document.getElementById('reset');
 
 
@@ -11,8 +11,9 @@ function buildGrid(size) {
         const cell = document.createElement('div');
         cell.classList.add('gridCell');
 
-        container.style.gridTemplateColumns = `repeat(${size}, 3rem)`;
-        container.style.gridTemplateRows = `repeat(${size}, 3rem)`;
+        container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+        
 
         container.appendChild(cell);      
         
@@ -77,13 +78,4 @@ resetButton.onclick = () => {
     
     drawNewGrid();
 }
-
-    
-
-
-//black blobs under grid?
-
-
-
-
 
