@@ -1,20 +1,15 @@
-body{
+body {
     margin: 0% 20% 0%;
 }
 
 #grid {
-    display:grid;
+    display: grid;
     width: 50vw;
     border: solid black;
-    
-    
 }
 
 .gridCell {
     border: #ededed 0.5px;
     border-style: none solid solid none;
     aspect-ratio: 1;
-    
-    
-    
 }
