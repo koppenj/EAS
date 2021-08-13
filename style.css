@@ -1,10 +1,16 @@
 body {
-    margin: 0% 20% 0%;
+    margin: 0 25px;
+}
+
+.container {
+    padding: 25px 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #grid {
     display: grid;
-    width: 50vw;
     border: solid black;
 }
 
@@ -12,4 +18,27 @@ body {
     border: #ededed 0.5px;
     border-style: none solid solid none;
     aspect-ratio: 1;
+}
+
+#reset {
+    margin-bottom: 15px;
+    appearance: none;
+    border: 1px solid #000;
+    color: #FFF;
+    padding: 6px 8px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    background-color: #000;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+#reset:hover {
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #000;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
