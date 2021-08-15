@@ -5,16 +5,14 @@ const container = document.getElementById('grid');
 const resetButton = document.getElementById('reset');
 
 function buildGrid(size) {
-  for (let i = 1; i <= size; i++) {
-    for (let j = 1; j <= size; j++) {
-      const cell = document.createElement('div');
-      cell.classList.add('gridCell');
+  for (let i = 1; i <= size * size; i++) {
+    const cell = document.createElement('div');
+    cell.classList.add('gridCell');
 
-      container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-      container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-      container.appendChild(cell);
-    }
+    container.appendChild(cell);
   }
   // eslint-disable-next-line no-use-before-define
   drawOnGrid();
