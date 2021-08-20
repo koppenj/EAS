@@ -41,9 +41,10 @@ function drawNewGrid() {
   if (Number.isNaN(newSize)) {
     alert(' A real, positive number is required.');
     drawNewGrid();
-  }
-
-  if (newSize > 100) {
+  } else if (newSize < 1) {
+    alert(" Don't be so negative. ");
+    drawNewGrid();
+  } else if (newSize > 100) {
     alert(' Try and keep it at 100 maximum. ');
     drawNewGrid();
   } else {
